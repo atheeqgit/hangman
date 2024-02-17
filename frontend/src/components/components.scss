@@ -1,0 +1,138 @@
+.drawing {
+  position: relative;
+
+  .base {
+    position: absolute;
+    width: 200px;
+    height: 8px;
+    background-color: black;
+    left: -95px;
+  }
+  .pole {
+    height: 300px;
+    width: 8px;
+    background-color: black;
+  }
+  .top-pole {
+    width: 150px;
+    height: 8px;
+    background-color: black;
+  }
+  .little-downpole {
+    height: 40px;
+    width: 8px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+  }
+  .head {
+    position: absolute;
+    right: -20px;
+    top: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 8px solid black;
+  }
+  .body {
+    height: 100px;
+    width: 8px;
+    position: absolute;
+    right: 0;
+    background-color: black;
+    top: 90px;
+  }
+  .left-hand {
+    position: absolute;
+    right: 5px;
+    width: 70px;
+    height: 8px;
+    background-color: black;
+    top: 115px;
+    rotate: 25deg;
+    transform-origin: right;
+  }
+  .right-hand {
+    position: absolute;
+    right: -68px;
+    width: 70px;
+    height: 8px;
+    background-color: black;
+    top: 112px;
+    rotate: -25deg;
+    transform-origin: left;
+  }
+  .left-leg {
+    position: absolute;
+    right: 0;
+    width: 70px;
+    height: 8px;
+    background-color: black;
+    top: 185px;
+    rotate: -40deg;
+    transform-origin: right;
+  }
+  .right-leg {
+    position: absolute;
+    right: -65px;
+    width: 70px;
+    height: 8px;
+    background-color: black;
+    top: 187px;
+    rotate: 40deg;
+    transform-origin: left;
+  }
+}
+
+.word {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  span {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 5px solid black;
+
+    .letter.hidden {
+      content: "";
+      opacity: 0;
+    }
+
+    .letter.revealed {
+      color: red;
+    }
+  }
+}
+
+.keyboard {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(8, 1fr);
+
+  .disabled {
+    background-color: rgb(94, 94, 94);
+    &:active {
+      scale: 1;
+    }
+  }
+  button {
+    cursor: pointer;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #c9c9c9;
+    border: none;
+    outline: none;
+    color: rgb(27, 27, 27);
+
+    &:hover {
+      background-color: rgb(94, 94, 94);
+    }
+    &:active {
+      scale: 0.9;
+    }
+  }
+}
