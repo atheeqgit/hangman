@@ -112,11 +112,19 @@
   grid-template-columns: repeat(8, 1fr);
 
   .disabled {
-    background-color: rgb(94, 94, 94);
+    background-color: rgb(255, 193, 255);
+    color: red;
+
     &:active {
       scale: 1;
     }
+
+    &.correct {
+      background-color: rgb(195, 255, 193);
+      color: rgb(20, 99, 0);
+    }
   }
+
   button {
     cursor: pointer;
     font-size: 2rem;

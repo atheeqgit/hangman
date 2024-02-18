@@ -8,38 +8,38 @@ interface prop {
 }
 
 const Keyboard = ({ handleKeyClick, correctArr, guessedWord }: prop) => {
-  const alphabet = [
-    "a",
-    "b",
-    "c",
-    "d",
+  const qwerty = [
+    "q",
+    "w",
     "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
     "f",
     "g",
     "h",
-    "i",
     "j",
     "k",
     "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
     "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
   ];
 
   return (
     <div className="keyboard">
-      {alphabet.map((letter: string) => {
+      {qwerty.map((letter: string) => {
         return (
           <button
             onClick={() => {
@@ -47,7 +47,11 @@ const Keyboard = ({ handleKeyClick, correctArr, guessedWord }: prop) => {
                 handleKeyClick(letter);
               }
             }}
-            className={guessedWord?.includes(letter) ? "disabled" : ""}
+            className={`${guessedWord?.includes(letter) ? "disabled" : ""} ${
+              guessedWord?.includes(letter) && correctArr.includes(letter)
+                ? "correct"
+                : ""
+            }`}
           >
             {letter}
           </button>
